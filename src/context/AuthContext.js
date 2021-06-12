@@ -36,12 +36,22 @@ export const AuthProvider = ({ children }) => {
     return auth.sendPasswordResetEmail(email);
   };
 
+  const updateEmail = (email) => {
+    return currentUser.updateEmail(email);
+  };
+
+  const updatePassword = (password) => {
+    return currentUser.updatePassword(password);
+  };
+
   const value = {
     currentUser,
     signUp,
     login,
     logout,
     resetPassword,
+    updateEmail,
+    updatePassword,
   };
 
   return (
